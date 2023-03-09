@@ -2,5 +2,11 @@
 <ul>
   <% @lists.each do |list| %>
     <li><%= list.name%></li>
+    <p>Movies:</p>
+    <ul>
+      <% list.movies.each do |movie| %>
+        <li><%= movie.title %></li>
+      <% end %>
+    </ul>
   <% end %>
 </ul>
