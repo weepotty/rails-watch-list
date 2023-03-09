@@ -7,7 +7,7 @@
   <div class="cards">
     <% @list.bookmarks.each do |bookmark| %>
       <div class="card-trip">
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+        <img src=<%= bookmark.movie.poster_url %> />
         <div class="card-trip-infos">
           <div>
             <h2><%= bookmark.movie.title %> &#183;  <%= bookmark.movie.rating %> <i class="fa-solid fa-star"></i></h2>
