@@ -1,3 +1,13 @@
 <p>
   <%= @list.name %>
 </p>
+<p>Bookmarks:</p>
+<ul>
+  <% @bookmarks.each do |bookmark| %>
+    <li><%= bookmark.id %></li>
+    <%= link_to "Delete",
+    bookmark_path(bookmark),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+%>
+  <% end %>
+</ul>
