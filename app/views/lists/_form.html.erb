@@ -1,6 +1,7 @@
 <div class="container w-50 mt-4">
   <%= simple_form_for(@list) do |f| %>
     <%= f.input :name %>
+    <%= f.input :image_path %>
     <%= f.submit class: 'btn btn-success' %>
   <% end %>
 </div>
