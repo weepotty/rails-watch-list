@@ -1,9 +1,20 @@
-<div class="banner"></div>
-<h1>Lists</h1>
-<ul>
-  <% @lists.each do |list| %>
-    <%= link_to list_path(list) do %>
-      <li><%= list.name%></li>
+<div class="banner text-center">
+  <div class="container">
+    <h1>Save any kind of movies</h1>
+    <p>Classic</p>
+  </div>
+</div>
+<div class="container my-4">
+  <div class="cards">
+    <% @lists.each do |list| %>
+      <%= link_to list_path(list) do %>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+          <%= list.name%>
+        </div>
+      <% end %>
     <% end %>
+  </div>
+  <%= link_to new_list_path do %>
+    <button type="button" class="my-4 btn btn-success">Create a new movie list</button>
   <% end %>
-</ul>
+</div>

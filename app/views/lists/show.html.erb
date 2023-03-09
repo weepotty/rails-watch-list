@@ -1,12 +1,19 @@
-<p>
-  <%= @list.name %>
-</p>
-<p>Movies:</p>
-<ul>
+<div class="banner text-center">
+  <div class="container">
+    <h1><%= @list.name %></h1>
+  </div>
+</div>
+<div class="cards">
   <% @list.movies.each do |movie| %>
-    <li><%= movie.title %></li>
+    <div class="card-product">
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+      <div class="card-product-infos">
+        <h2><%= movie.title %></h2>
+        <p><%= movie.title %></p>
+      </div>
+    </div>
   <% end %>
-</ul>
+</div>
 <p>Bookmarks:</p>
 <ul>
   <% @list.bookmarks.each do |bookmark| %>
