@@ -3,9 +3,4 @@
     <h1>Create a List</h1>
   </div>
 </div>
-<div class="container w-50 mt-4">
-  <%= simple_form_for(@list) do |f| %>
-    <%= f.input :name %>
-    <%= f.submit class: 'btn btn-success' %>
-  <% end %>
-</div>
+<%= render 'form' %>
