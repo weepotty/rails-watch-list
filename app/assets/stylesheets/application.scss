@@ -10,3 +10,15 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+
+ul {
+ list-style:none;
+
+}
+
+
+
+.navbar li {
+  display: inline-block;
+}
