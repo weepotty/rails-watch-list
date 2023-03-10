@@ -16,7 +16,6 @@ class ListsController < ApplicationController
 
   def create
     @list = List.new(list_params)
-    raise
 
     if @list.save
       redirect_to list_path(@list)
