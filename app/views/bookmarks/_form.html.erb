@@ -1,4 +1,5 @@
 <div class="card w-50 p-4 my-4">
+  <h3>Create a Bookmark</h3>
   <%= simple_form_for [@list, @bookmark] do |f| %>
     <%= f.input :comment %>
     <%= f.association :movie %>

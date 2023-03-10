@@ -1,11 +1,12 @@
 class ReviewsController < ApplicationController
-
+  before_action :set_list, only: [:create]
 
   # POST lists/:list_id/reviews
   def create
-    @list = List.find(params[:list_id])
+    @list
     @review = Review.new(review_params)
     @review.list = @list
+    @bookmark = Bookmark.new
 
     if @review.save
       redirect_to list_path(@list)
@@ -20,4 +21,7 @@ class ReviewsController < ApplicationController
     params.require(:review).permit(:author, :stars, :content)
   end
 
+  def set_list
+    @list = List.find(params[:list_id])
+  end
 end

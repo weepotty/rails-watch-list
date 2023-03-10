@@ -6,12 +6,7 @@
 <div class="container my-4">
   <%= render 'lists/cards' %>
   <%= render 'bookmarks/form', list: @list, bookmark: @bookmark %>
-  <%= simple_form_for [@list, @review] do |f| %>
-    <%= f.input :author %>
-    <%= f.input :content, label: 'Your Review', as: :text %>
-    <%= f.input :stars, label: 'Rating' %>
-    <%= f.submit class:'btn btn-success'%>
-  <% end %>
+  <%= render 'reviews/form', list:@list, review:@review %>
 </div>
 <div class="container">
   <% @list.reviews.each do |review| %>

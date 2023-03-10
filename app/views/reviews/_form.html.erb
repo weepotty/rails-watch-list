@@ -1,0 +1,9 @@
+<div class="card w-50 p-4 my-4">
+  <h3>Leave a Review</h3>
+  <%= simple_form_for [@list, @review] do |f| %>
+    <%= f.input :author %>
+    <%= f.input :content, label: 'Your Review', as: :text %>
+    <%= f.input :stars, label: 'Rating' %>
+    <%= f.submit class:'btn btn-success'%>
+  <% end %>
+</div>
