@@ -1,8 +1,7 @@
-<div class="card w-50 my-4">
+<div class="card w-50 p-4 my-4">
   <%= simple_form_for [@list, @bookmark] do |f| %>
     <%= f.input :comment %>
     <%= f.association :movie %>
     <%= f.submit class:'btn btn-success' %>
   <% end %>
 </div>
-b
