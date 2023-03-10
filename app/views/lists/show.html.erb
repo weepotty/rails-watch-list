@@ -4,11 +4,6 @@
   </div>
 </div>
 <div class="container my-4">
-  <%= render 'cards' %>
-  <%# add a new bookmark button %>
-  <div class='my-4'>
-    <%= link_to new_list_bookmark_path(@list) do %>
-      <button class='btn btn-success'>Add a new bookmark</button>
-    <% end %>
-  </div>
+  <%= render 'lists/cards' %>
+  <%= render 'bookmarks/form', list: @list, bookmark: @bookmark %>
 </div>
