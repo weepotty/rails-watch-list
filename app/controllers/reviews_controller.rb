@@ -6,7 +6,7 @@ class ReviewsController < ApplicationController
     @list = List.find(params[:list_id])
     @review = Review.new(review_params)
     @review.list = @list
-    raise
+
     if @review.save
       redirect_to list_path(@list)
     else

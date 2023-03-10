@@ -13,3 +13,10 @@
     <%= f.submit class:'btn btn-success'%>
   <% end %>
 </div>
+<div class="container">
+  <% @list.reviews.each do |review| %>
+    <p><%= review.content %></p>
+    <p>Rating: <%= review.stars %></p>
+    <p>Author: <%= review.author %></p>
+  <% end %>
+</div>
