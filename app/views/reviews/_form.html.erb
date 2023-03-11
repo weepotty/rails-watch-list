@@ -3,7 +3,7 @@
   <%= simple_form_for [@list, @review] do |f| %>
     <%= f.input :author %>
     <%= f.input :content, label: 'Your Review', as: :text %>
-    <%= f.input :stars, label: 'Rating' %>
+    <%= f.input :stars, collection: (1..5).to_a, label: "Rating", input_html: {data: {controller: "star-rating"}} %>
     <%= f.submit class:'btn btn-success'%>
   <% end %>
 </div>

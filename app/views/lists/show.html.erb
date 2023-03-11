@@ -10,8 +10,12 @@
 </div>
 <div class="container">
   <% @list.reviews.each do |review| %>
-    <p><%= review.content %></p>
-    <p>Rating: <%= review.stars %></p>
-    <p>Author: <%= review.author %></p>
+    <% review.stars.to_i.times do  %>
+      <i class="fa-solid fa-star"></i>
+    <% end %>
+    <% (5-review.stars.to_i).times do  %>
+      <i class="fa-regular fa-star"></i>
+    <% end %>
+    <p><%= review.content %> - <%= review.author %></p>
   <% end %>
 </div>
