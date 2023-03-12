@@ -5,17 +5,13 @@
 </div>
 <div class="container my-4">
   <%= render 'lists/cards' %>
-  <%= render 'bookmarks/form', list: @list, bookmark: @bookmark %>
-  <%= render 'reviews/form', list:@list, review:@review %>
 </div>
-<div class="container">
-  <% @list.reviews.each do |review| %>
-    <% review.stars.to_i.times do  %>
-      <i class="fa-solid fa-star"></i>
-    <% end %>
-    <% (5-review.stars.to_i).times do  %>
-      <i class="fa-regular fa-star"></i>
-    <% end %>
-    <p><%= review.content %> - <%= review.author %></p>
-  <% end %>
+<div class="container ">
+  <%= render 'bookmarks/form', list: @list, bookmark: @bookmark %>
+  <div class="row">
+    <div class="col py-4">
+      <%= render 'reviews' %>
+    </div>
+    <div class="col"><%= render 'reviews/form', list:@list, review:@review %></div>
+  </div>
 </div>
