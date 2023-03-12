@@ -1,10 +1,14 @@
 <h2>What others think of this list..</h2>
-<% @list.reviews.each do |review| %>
-  <% review.stars.to_i.times do  %>
-    <i class="fa-solid fa-star"></i>
+<% if @list.reviews.empty? %>
+  <p>No reviews yet.</p>
+<% else %>
+  <% @list.reviews.each do |review| %>
+    <% review.stars.to_i.times do  %>
+      <i class="fa-solid fa-star"></i>
+    <% end %>
+    <% (5-review.stars.to_i).times do  %>
+      <i class="fa-regular fa-star"></i>
+    <% end %>
+    <p>"<%= review.content %>" - <%= review.author %></p>
   <% end %>
-  <% (5-review.stars.to_i).times do  %>
-    <i class="fa-regular fa-star"></i>
-  <% end %>
-  <p>"<%= review.content %>" - <%= review.author %></p>
 <% end %>
